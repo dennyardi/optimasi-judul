@@ -42,6 +42,14 @@
                 <p class="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">Workspace Mode</p>
                 <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300">Single-user dashboard with local settings and private generation history.</p>
             </div>
+
+            <form method="POST" action="{{ route('logout') }}" class="mt-4">
+                @csrf
+                <button type="submit" class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50">
+                    <i data-lucide="log-out" class="h-4 w-4"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
         </aside>
 
         <div class="min-w-0">

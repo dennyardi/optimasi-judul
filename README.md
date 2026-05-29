@@ -25,6 +25,17 @@ php artisan serve
 
 Atur koneksi MySQL di `.env`, lalu buka halaman Settings untuk menyimpan OpenAI API key, model AI aktif, dan channel context.
 
+## Admin Login
+
+Set admin credentials di `.env`, lalu jalankan seeder:
+
+```bash
+ADMIN_NAME="Administrator"
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=change-this-password
+php artisan db:seed --force
+```
+
 ## OpenAI Models
 
 Model yang tersedia di Settings:

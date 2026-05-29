@@ -1,10 +1,10 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
-import { createIcons, BarChart3, Bolt, CheckCircle2, Clipboard, Clock3, Eye, EyeOff, FileText, History, Loader2, MessageSquare, Moon, PanelLeft, Search, Settings, Sparkles, Sun, Tags, Trash2, Type, WandSparkles, X } from 'lucide';
+import { createIcons, BarChart3, Bolt, CheckCircle2, Clipboard, Clock3, Eye, EyeOff, FileText, History, Loader2, LogOut, MessageSquare, Moon, PanelLeft, Search, Settings, Sparkles, Sun, Tags, Trash2, Type, WandSparkles, X } from 'lucide';
 
 window.Alpine = Alpine;
 
-const lucideIcons = { BarChart3, Bolt, CheckCircle2, Clipboard, Clock3, Eye, EyeOff, FileText, History, Loader2, MessageSquare, Moon, PanelLeft, Search, Settings, Sparkles, Sun, Tags, Trash2, Type, WandSparkles, X };
+const lucideIcons = { BarChart3, Bolt, CheckCircle2, Clipboard, Clock3, Eye, EyeOff, FileText, History, Loader2, LogOut, MessageSquare, Moon, PanelLeft, Search, Settings, Sparkles, Sun, Tags, Trash2, Type, WandSparkles, X };
 
 Alpine.data('theme', () => ({
     dark: localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches),
