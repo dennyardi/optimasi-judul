@@ -18,7 +18,7 @@ class AuthController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'string'],
             'password' => ['required', 'string'],
         ]);
 
@@ -26,7 +26,7 @@ class AuthController extends Controller
 
         if (! Auth::attempt($credentials, $remember)) {
             throw ValidationException::withMessages([
-                'email' => 'Email atau password tidak sesuai.',
+                'username' => 'Username atau password tidak sesuai.',
             ]);
         }
 

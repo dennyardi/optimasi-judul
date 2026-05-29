@@ -13,12 +13,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::query()->updateOrCreate(
-            ['email' => env('ADMIN_EMAIL', 'admin@example.com')],
-            [
-                'name' => env('ADMIN_NAME', 'Administrator'),
-                'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
-            ]
-        );
+        $username = env('ADMIN_USERNAME', 'admin');
+        $email = env('ADMIN_EMAIL', 'admin@example.com');
+
+        $user = User::query()
+            ->where('username', $username)
+            ->orWhere('email', $email)
+            ->first() ?? new User;
+
+        $user->fill([
+            'name' => env('ADMIN_NAME', 'Administrator'),
+            'username' => $username,
+            'email' => $email,
+            'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
+        ])->save();
     }
 }

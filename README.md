@@ -31,6 +31,7 @@ Set admin credentials di `.env`, lalu jalankan seeder:
 
 ```bash
 ADMIN_NAME="Administrator"
+ADMIN_USERNAME=admin
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=change-this-password
 php artisan db:seed --force
